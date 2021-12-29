@@ -66,8 +66,7 @@ function getProductsFunc() {
                         <button style="margin-top:5px;background-color:#eeeeee; width: 190px; height:30px; color:#444444; box-shadow:3px 3px 3px 0px rgba(227,222,222,0.75); cursor:pointer; border:none;" onclick="updateOneProductsFunc(${products.id})" class="someText"> UPDATE </button>
                 </div>`
             })
-            document.querySelector(".productsSection").innerHTML = productCard;  //use query selector instead of getelement by class name all the time to prevent any problem
-            //Why I had an error when I I used getElementByClassName
+            document.querySelector(".productsSection").innerHTML = productCard;  
             Object.values(document.getElementsByClassName("card")).map(el => {
                 el.style.minWidth = "20%"
                 el.style.height = "auto"
@@ -132,7 +131,7 @@ function postProductsFunc() {
 
 //PUT - starts here
 function updateProductsFunc() {
-    fetch('https://61bf323ab25c3a00173f4cff.mockapi.io/products/10', {  //how to update more than one element at once???????????
+    fetch('https://61bf323ab25c3a00173f4cff.mockapi.io/products/10', { 
         method: "PUT",
         headers: { 'Content-Type': "application/json" },
         body: JSON.stringify(
