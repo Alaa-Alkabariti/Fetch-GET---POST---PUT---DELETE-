@@ -86,6 +86,7 @@ function getProductsFunc() {
         }).catch(error => Error("Error!!"))
 }
 
+//card hovering style starts here
 function normal(x) {
   x.style.backgroundColor = "white";
   x.style.boxShadow = "3px 3px 3px 0px rgba(227,222,222,0.75)";
@@ -96,6 +97,7 @@ function normal(x) {
     x.style.cursor = "pointer";
     x.style.boxShadow = "6px 6px 6px 6px rgba(227,222,222,0.75)";
   }
+//card hovering style ends here
 
 
 getProductsFunc();
