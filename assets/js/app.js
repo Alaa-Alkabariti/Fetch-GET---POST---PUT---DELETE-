@@ -111,6 +111,7 @@ function postProductsFunc() {
         },
         body: JSON.stringify(
             {
+                "id" : "1",
                 "name": "morpheus",
                 "price": "55"
             }),
@@ -131,7 +132,7 @@ function postProductsFunc() {
 
 //PUT - starts here
 function updateProductsFunc() {
-    fetch('https://61bf323ab25c3a00173f4cff.mockapi.io/products/10', { 
+    fetch('https://61bf323ab25c3a00173f4cff.mockapi.io/products/5', { 
         method: "PUT",
         headers: { 'Content-Type': "application/json" },
         body: JSON.stringify(
@@ -146,21 +147,20 @@ function updateProductsFunc() {
     })
         .then(response => response.json())
         .then(data => {
-            getProductsFunc();
+             getProductsFunc(); 
             console.log(data);
         })
 }
 
-function updateOneProductsFunc() {
+function updateOneProductsFunc(id) {
     fetch(`https://61bf323ab25c3a00173f4cff.mockapi.io/products/${id}`, {
         method: "PUT",
         headers: { 'Content-Type': "application/json" },
         body: JSON.stringify(
             {
-                "id": "3",
-                "name": "bv",
-                "price": "99",
-                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFS7HZXhRstpR6GiUr5RANfYgN2luGtag0g&usqp=CAU"
+                name : "T-Shirt",
+                price: "99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFS7HZXhRstpR6GiUr5RANfYgN2luGtag0g&usqp=CAU"
             }
         )
 
